@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Welcome to RMC</title>
+    </head>
+    <body>
+        <div>
+            History:
+            <a href="{{ url_for('home') }}">Home</a>
+        </div>
+        <hr>
+        <hr>
+        <h1>Calculation history</h1>
+        {% for record in history %}
+            <ul>
+                <li>timestamp {{ record.timestamp }}</li>
+                <li>result {{ record.result }}</li>
+                <li>execution time {{ record.exectime }}</li>
+                <br>
+            </ul>
+        {% endfor %}
+    </body>
+</html>

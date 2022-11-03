@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Welcome to RMC</title>
+    </head>
+    <body>
+        <div>
+            Home:
+            <a href="{{ url_for('history') }}">History</a> 
+            <a href="{{ url_for('logout') }}">Logout</a>
+        </div>
+        <hr>
+        <hr>
+
+        <h1>Random Matrices Parameters</h1>
+        <form action="" method="post" novalidate>
+        {{ form.hidden_tag() }}
+        <p>
+            {{ form.size.label }}<br>
+            {{ form.size(size=20) }}<br>
+            {% for error in form.size.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.minnum.label }}<br>
+            {{ form.minnum(size=20) }}<br>
+            {% for error in form.minnum.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.maxnum.label }}<br>
+            {{ form.maxnum(size=20) }}<br>
+            {% for error in form.maxnum.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>{{ form.submit() }}</p>
+    </form>
+    </body>
+</html>
